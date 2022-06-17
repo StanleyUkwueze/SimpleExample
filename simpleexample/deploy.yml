@@ -1,4 +1,4 @@
-name: .NET deploy
+name: App Deploy
 on:
   push:
     branches: [ deploy ]
@@ -29,7 +29,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: ${{ secrets.AWS_ECR }}
+        ECR_REPOSITORY: awsdockerrepo #${{ secrets.AWS_ECR }}  #awsdockerrepo
         IMAGE_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
       run: |
         # Build a docker container and push it to ECR 
