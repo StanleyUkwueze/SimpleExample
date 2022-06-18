@@ -4,7 +4,10 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
+<<<<<<< HEAD:Dockerfile
 
+=======
+>>>>>>> f1a8073e4dd55c001133c6cf27cd457179ab8c5e:simpleexample/Dockerfile
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["simpleexample/simpleexample.csproj", "simpleexample/"]
