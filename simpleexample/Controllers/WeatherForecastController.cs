@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace simpleexample.Controllers
 {
+  
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -34,6 +35,23 @@ namespace simpleexample.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet]
+        [Route("GetNames")]
+        public IEnumerable<string> GetNames()
+        {
+            var list = new List<string>
+            {
+             "Stanley",
+            "Ukwueze",
+            "Jane",
+            "Glory",
+            "Faith"
+            };
+
+            return list.ToArray();
+
         }
     }
 }
